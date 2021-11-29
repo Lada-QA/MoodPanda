@@ -34,6 +34,6 @@ public class MoodPandaTest extends BaseTest {
                 .setMonthAndYearCalendar(5, 8)
                 .setDateCalendar(11);
         clickButtonsSteps.createMood(7);
-        Assert.assertEquals(myDiaryPage.getDateFromMyDiary(), "12 Jun 2019");
+        Assert.assertEquals(myDiaryPage.getDateFromMyDiary(), "11 Jun 2019");
     }
 }
