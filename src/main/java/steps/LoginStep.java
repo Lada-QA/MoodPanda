@@ -6,7 +6,6 @@ import pages.LoginPage;
 public class LoginStep {
     LoginPage loginPage = new LoginPage();
 
-
     public FeedPage login(String email, String password) {
         loginPage.openPage()
                 .login(email, password);

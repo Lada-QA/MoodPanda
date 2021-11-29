@@ -12,7 +12,7 @@ public class MyDiaryPage {
         return $(TEXT_FROM_MY_DIARY_MOOD).getText();
     }
 
-    public String dateFromMyDiary() {
+    public String getDateFromMyDiary() {
         return $(DATE_MY_MOOD).getText();
     }
 

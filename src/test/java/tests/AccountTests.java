@@ -1,12 +1,16 @@
+package tests;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.PropertyReader;
 
 public class AccountTests extends BaseTest {
 
     @Test(description = "Filling field with new password on Edit Profile in Account and " +
             "clicking button to save changes, we should be get error message")
     public void getErrorMessageWithoutConfirmPasswordTest() {
-        loginStep.login(EMAIL, PASSWORD);
+        loginStep.login(System.getProperty("email", PropertyReader.getProperty("email")),
+                System.getProperty("password", PropertyReader.getProperty("password")));
         accountPage.openPage()
                 .changedPassword("Lala1253", "")
                 .clickButtonUpdateDetails()
@@ -18,9 +22,11 @@ public class AccountTests extends BaseTest {
     @Test(description = "Filling field with new password and confirm password on Edit Profile in Account and " +
             "change TimeZone and Country, clicking button to save changes, we should be get Success message")
     public void getSuccessMessageAndNewTimeCountryTest() {
-        loginStep.login(EMAIL, PASSWORD);
+        loginStep.login(System.getProperty("email", PropertyReader.getProperty("email")),
+                System.getProperty("password", PropertyReader.getProperty("password")));
         accountPage.openPage()
-                .changedPassword("engEng1234", "engEng1234")
+                .changedPassword(System.getProperty("newPassword", PropertyReader.getProperty("newPassword")),
+                System.getProperty("confirmPassword", PropertyReader.getProperty("confirmPassword")))
                 .clickButtonUpdateDetails();
         Assert.assertEquals(accountPage.getSuccessMessage(), "×\n" +
                 "Success! Your changes were saved");
@@ -30,8 +36,9 @@ public class AccountTests extends BaseTest {
 
     @Test(description = "Choose and safe new Avatar in Account Page, checking new avatar on isDisplayed")
     public void createNewAvatarTest() {
-        loginStep.login(EMAIL, PASSWORD);
+        loginStep.login(System.getProperty("email", PropertyReader.getProperty("email")),
+                System.getProperty("password", PropertyReader.getProperty("password")));
         avatarPage.chooseNewAvatar();
-        Assert.assertTrue(avatarPage.checkMyAvatar());
+        Assert.assertTrue(avatarPage.isMyAvatarDisplayed());
     }
 }

@@ -18,7 +18,7 @@ public class AvatarPage {
         return this;
     }
 
-    public boolean checkMyAvatar() {
+    public boolean isMyAvatarDisplayed() {
         return $(MY_AVATAR_CSS).shouldBe(Condition.visible).isDisplayed();
     }
 }
