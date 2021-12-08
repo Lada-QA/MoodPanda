@@ -11,16 +11,7 @@ import steps.LoginStep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 @Listeners(TestListener.class)
-public class BaseTest {
-    LoginPage loginPage;
-    FeedPage feedPage;
-    MoodUpdatedModalPage moodUpdatedModalPage;
-    MyDiaryPage myDiaryPage;
-    RateYourHappinessModalPage rateYourHappinessModalPage;
-    AvatarPage avatarPage;
-    AccountPage accountPage;
-    LoginStep loginStep;
-    ClickButtonsSteps clickButtonsSteps;
+public class BaseTest extends InitializingPages{
 
     @BeforeMethod
     public void init() {

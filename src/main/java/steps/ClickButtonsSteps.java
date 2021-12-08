@@ -10,14 +10,12 @@ public class ClickButtonsSteps {
     RateYourHappinessModalPage rateYourHappinessModalPage = new RateYourHappinessModalPage();
 
     public RateYourHappinessModalPage clickUpdateMoodButtonAndWait() {
-        log.info("Click 'Update Mood' button on Mood Update Page");
         feedPage.waitForMoodButtonVisible()
                 .clickUpdateMoodButton();
         return new RateYourHappinessModalPage();
     }
 
     public void createMood(int moodValue) {
-        log.info("Create mood with Slider 'update mood'" + moodValue);
         rateYourHappinessModalPage.updateMood(moodValue)
                 .clickButtonGoToMyDiary();
     }

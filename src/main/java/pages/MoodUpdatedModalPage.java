@@ -5,9 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import static com.codeborne.selenide.Selenide.$;
 
 @Log4j2
-public class MoodUpdatedModalPage {
-
-    public static final String BUTTON_GO_TO_MY_DIARY = ".ButtonMyDiary";
+public class MoodUpdatedModalPage extends BasePage{
 
     public MyDiaryPage clickButtonGoToMyDiary() {
         log.info("Click 'Go to my Diary' button");
