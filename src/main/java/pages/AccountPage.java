@@ -8,6 +8,15 @@ import static com.codeborne.selenide.Selenide.$;
 @Log4j2
 public class AccountPage extends BasePage{
 
+    public static final String ACCOUNT_URL = BASE_URL + "/Account/";
+    public static final String TIME_ZONE_DROP_DOWN_CSS = "#ContentPlaceHolderContent_DropDownListTimeZone";
+    public static final String COUNTRY_DROP_DOWN_CSS = "#ContentPlaceHolderContent_DropDownListCountry";
+    public static final String NEW_PASSWORD_CSS = "#ContentPlaceHolderContent_TextBoxNewPassword";
+    public static final String CONFIRM_PASSWORD_CSS = "#ContentPlaceHolderContent_TextBoxNewPasswordConfirm";
+    public static final String BUTTON_UPDATE_DETAILS_CSS = "#ContentPlaceHolderContent_ButtonSave";
+    public static final String ERROR_MESSAGE_CSS = "#ContentPlaceHolderContent_MessageErrorPassword";
+    public static final String SUCCESS_MESSAGE_CSS = "#ContentPlaceHolderContent_MessageSuccess";
+
     public AccountPage openPage() {
         openURL(ACCOUNT_URL);
         return this;
